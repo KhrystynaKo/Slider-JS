@@ -102,22 +102,28 @@ these make the slideshow work
   padding: 0;
   margin: 0;
   display: none;
+ 
 }
 
 .indicator {
+  align-items: center;
   font-family: 'Muli', sans-serif;
   display: inline-block;
   font-size: 1.7rem;
   background-color: #fffafa;
   font-weight: 700;
-  height: 45px;
+  height: 50px;
   width: 52px;
+  border: none;
   border-radius: 50%;
   text-align: center;
   box-shadow:0px 1px 19px 6px rgba(0,0,0,0.27);
-  padding-top: 6px;
+  padding-top: 3px;
+  outline: none;
 
+  &:focus,
   &.active {
+    outline: none;
     background: radial-gradient(ellipse at center, #ffffff  14%, #dddedf 45%,#696969 73%,#464545 100%);
   }
 }
