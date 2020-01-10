@@ -94,7 +94,7 @@ body {
 }
 
 .control-pause {
-  top: 85%;
+  top: calc(100vh - 150px);
   -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -219,7 +219,6 @@ body {
     height: 130px;
     border-width: 35px;
     border-color: #ffffff;
-    border-style: 35px solid #ffffff;
   }
 }
 
@@ -257,7 +256,6 @@ body {
     height: 130px;
     border-width: 35px;
     border-color: #ffffff;
-    border-style: 35px solid #ffffff;
   }
 }
 
@@ -336,5 +334,13 @@ body {
     left: calc(50% - 55px);
     border: 70px solid transparent;
     border-left: 130px solid #ffffff;
+  }
+}
+
+@media (max-width: 356px) {
+  .indicator {
+    margin: 2px;
+    height: 15px;
+    width: 15px;
   }
 }
