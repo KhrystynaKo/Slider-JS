@@ -4,14 +4,20 @@ let indContainer = document.querySelector('.indicators');
 let indItems = document.querySelectorAll('.indicator')
 let slidelength = slideItems.length;
 let currentSlide = 0;
-let carouselInterval = 5000;
+let carouselInterval = 2000;
 
-const LEFT_ARROW = 'ArrowLetf';
+let playbackStatus = true;
+let pauseBtn = document.querySelector('#pause');
+let prevBtn = document.querySelector('#prev');
+let nextBtn = document.querySelector('#next');
+
+
+const LEFT_ARROW = 'ArrowLeft';
 const RIGHT_ARROW = 'ArrowRight';
 const SPACE = ' ';
 
-document.querySelector('.controls').style.display = 'inline-block';
-indContainer.style.display = 'inline-block';
+document.querySelector('.controls').style.display = 'block';
+indContainer.style.display = 'block';
 
 function gotoNSlide(n) {
     slideItems[currentSlide].classList.toggle('active');
@@ -26,22 +32,19 @@ let gotoNextSlide = () => gotoNSlide(currentSlide +1);
 let gotoPrevSlide = () =>   gotoNSlide(currentSlide -1);
 
 
-let playbackStatus = true;
-let pauseBtn = document.querySelector('#pause');
-let prevBtn = document.querySelector('#prev');
-let nextBtn = document.querySelector('#next');
 
 let pauseSlideShow = () => {
   if (playbackStatus){ 
     clearInterval(slideInterval);
-    pauseBtn.innerHTML = 'Play'
+    pauseBtn.className == 'control control-pause play' ? pauseBtn.className = 'control control-pause pause': pauseBtn.className ='control control-pause play';
     playbackStatus = !playbackStatus;
   }
 }
 
 let playSlideShow = () => {
   slideInterval = setInterval(gotoNextSlide, carouselInterval);
-  pauseBtn.innerHTML = 'Pause';
+  pauseBtn.className == 'control control-pause pause' ? pauseBtn.className ='control control-pause play': pauseBtn.className = 'control control-pause pause';
+  
   playbackStatus = !playbackStatus;
 }
 
