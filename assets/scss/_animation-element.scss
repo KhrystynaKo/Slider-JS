@@ -1,0 +1,104 @@
+.pause {
+  position: absolute;
+  z-index: 20;
+  width: 0;
+  height: 0;
+
+  border-left: 130px solid $main-color;
+  animation: pause 1s ease-out 1;
+  animation-fill-mode: both;
+
+}
+
+@keyframes pause {
+  0% {
+    opacity: 20%;
+    left: calc(50% - 66px);
+    border: 70px solid transparent;
+    border-left: 130px solid $main-color;
+  }
+
+  15% {
+    color: $accent-color;
+    opacity: 70%;
+  }
+  60% {
+    border-left: 35px solid $main-color;
+  }
+
+  85% {
+    opacity: 70%;
+    height: 130px;
+    border-width: 35px;
+    border-style: solid;
+  }
+  90% {
+    opacity: 50%;
+    // border-top: rgba(252, 252, 252, 0.486);
+    // border-bottom: rgba(252, 252, 252, 0.733);
+  }
+
+  95% {
+    opacity: 35%;
+    border-top: rgba(252, 252, 252, 0.486);
+    border-bottom: rgba(252, 252, 252, 0.267);
+  }
+
+  100% {
+    opacity: 20%;
+    width: 70px;
+    height: 130px;
+    border-width: 35px;
+    border-color: $main-color;
+    border-style: 35px solid $main-color;
+  }
+}
+
+.play {
+  position: absolute;
+  z-index: 20;
+  width: 0;
+  height: 0;
+
+  border-left: 130px solid $main-color;
+  animation: play 1s ease 1;
+  animation-fill-mode: both;
+}
+
+@keyframes play {
+  0% {
+    opacity: 20%;
+    width: 70px;
+    height: 130px;
+    border-width: 35px;
+    border-color: $main-color;
+    border-style: none solid none solid;
+  }
+
+  1% {
+    border-top: rgba(252, 252, 252, 0.486);
+    border-bottom: rgba(252, 252, 252, 0.486);
+  }
+
+  15% {
+    opacity: 70%;
+    height: 130px;
+    border-width: 35px;
+    border-style: solid;
+  }
+
+  40% {
+    border-left: 35px solid $main-color;
+  }
+
+  85% {
+    opacity: 70%;
+  }
+
+  100% {
+    opacity: 20%;
+    left: calc(50% - 55px);
+    border: 70px solid transparent;
+    border-left: 130px solid $main-color;
+  }
+}
