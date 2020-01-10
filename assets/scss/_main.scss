@@ -73,70 +73,19 @@
   align-items: center;
   justify-content: center;
   opacity: 50%;
+  transition: opacity 12s;
 }
 
 .control-pause {
+  top: 85%;
   transform: translateY(-50%);
-  // transform: translateX(-45%);
   left: calc(50% - 70px);
   padding: 0;
   border-width: 35px;
   border-style: none solid none solid;
-
+  
 }
 
-.pause {
-  
-  position: absolute;
-  z-index: 20;
-  width: 0;
-  height: 0;
-  
-  border-left: 130px solid #000;
-  animation: pause 2s ease 1;
-  animation-fill-mode: both;
-}  
-
-@keyframes pause {
-  0% {
-      left: calc(50% - 40px);
-      border: 70px solid transparent;
-      border-left: 130px solid #000;
-  }
-  100%{
-
-    width: 70px;
-    height: 130px;
-    border-width: 35px;
-    border-style: none solid  none solid;
-  }
-}
-
-.play {
-  position: absolute;
-  z-index: 20;
-  width: 0;
-  height: 0;
-  
-  border-left: 130px solid #000;
-  animation: play 2s ease 1;
-  animation-fill-mode: both;
-}  
-
-@keyframes play {
-  0% {
- 
-  width: 70px;
-  height: 130px;
-  border-width: 35px;
-  border-style: none solid  none solid;
-  }
-  100%{
-    left: calc(50% - 40px);
-    border: 70px solid transparent;
-    border-left: 130px solid #000;
-  }
-}
 .control-prev {
   border: 4px solid #ffffff;
   border-width: 0 0 8px 8px ;
@@ -144,6 +93,13 @@
   left: 30px;
   width: 30px;
   height: 30px;
+  transition: border-color 0.2s, opacity 0.2s;
+
+  &:hover,
+  &:focus {
+    opacity: 100%;
+    border-color: $accent-color;
+  } 
 }
 
 
@@ -154,16 +110,23 @@
   right: 30px;
   width: 30px;
   height: 30px;
+  transition: border-color 0.2s,opacity 0.2s;
+
+  &:hover,
+  &:focus {
+    opacity: 100%;
+    border-color: $accent-color;
+  }
 }
 
 .indicators {
   position: absolute;
   z-index: 5;
-  top: calc(100% - 35px);
+  top: calc(100% - 45px);
   left: 50%;
   transform: translateX(-50%);
-  cursor: pointer;
   display: none;
+  
 }
 
 .indicator {
@@ -174,7 +137,13 @@
   width: 22px;
   border: none;
   border-radius: 50%;
-  box-shadow: 0px 1px 19px 6px rgba(0, 0, 0, 0.27);
+  box-shadow: 0px 1px 19px 6px rgb(8, 8, 8);
   outline: none;
-  opacity: 50%;
+  opacity: 50%;  
+  cursor: pointer;
+}
+
+.active {
+  opacity: 100%;
+  background-color: $accent-color;
 }
